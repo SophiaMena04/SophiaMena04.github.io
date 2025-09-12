@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sophia Mena</title>
+    <title>Sophia Mena - Work Experience</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -16,13 +17,325 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f8f9fa;
+            --accent-color: #fd79a8;
+            --text-color: #2d3436;
+            --text-light: #636e72;
+            --transition: all 0.3s ease;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-color) !important;
+            position: relative;
+            margin: 0 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            opacity: 0.1;
+            top: -150px;
+            right: -100px;
+        }
+        
+        .page-title {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Tabs */
+        .nav-tabs {
+            border-bottom: 2px solid rgba(108, 92, 231, 0.2);
+            margin-bottom: 2rem;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            background: transparent;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .nav-tabs .nav-link:hover {
+            border-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        /* Experience Cards */
+        .experience-section {
+            padding: 2rem 0 4rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--secondary-color);
+            opacity: 0.3;
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .experience-company {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-date {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .experience-details {
+            margin-top: 1rem;
+        }
+        
+        .experience-details ul {
+            padding-left: 1.5rem;
+            margin-bottom: 0;
+        }
+        
+        .experience-details li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        .experience-details li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .icon-bullet {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        /* Leadership Cards */
+        .leadership-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .leadership-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            background: white;
+            padding: 3rem 0;
+            border-radius: 12px;
+            margin: 3rem auto;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+        
+        .skill-category h5 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .skill-badge {
+            display: inline-block;
+            background: var(--light-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0 0.5rem 0.5rem 0;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .skill-badge:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            font-weight: 300;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .experience-header {
+                flex-direction: column;
+            }
+            
+            .experience-date {
+                margin-top: 0.5rem;
+                align-self: flex-start;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
-
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Sophia Mena</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -32,29 +345,267 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="research.html">Research & Projects</a></li>
-		    <li class="nav-item"><a class="nav-link" href="experience.html">Work Experience</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="experience.html">Work Experience</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container my-5">
-        <h2 class="mb-4">Education History</h2>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title text-center">Professional Experience</h1>
+            <p class="page-subtitle text-center">A timeline of my professional journey, leadership roles, and the skills I've developed along the way</p>
+        </div>
+    </section>
 
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">BS in Applied Mathematics</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Florida State University (Expected May 2026)</h6>
-                <p class="card-text">GPA: 3.45/4.0</p>
+    <div class="container">
+        <ul class="nav nav-tabs justify-content-center" id="experienceTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="work-tab" data-bs-toggle="tab" data-bs-target="#work" type="button" role="tab">Work Experience</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="leadership-tab" data-bs-toggle="tab" data-bs-target="#leadership" type="button" role="tab">Leadership & Activities</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab">Skills</button>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="experienceTabsContent">
+            <!-- Work Experience Tab -->
+            <div class="tab-pane fade show active" id="work" role="tabpanel">
+                <section class="experience-section">
+                    <div class="timeline">
+                        <!-- Experience 1 -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Learning Assistant - Discrete Mathematics</h3>
+                                    <p class="experience-company">Florida State University (FSU), Tallahassee, FL</p>
+                                </div>
+                                <span class="experience-date">Aug 2024 - Present</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Supported 150+ students in lectures by guiding discussions and facilitating daily learning exercises.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Graded and provided feedback on 50+ assignments per week, ensuring students receive timely and constructive evaluations.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Held 2+ hours of weekly office hours, providing individualized support to students, reinforcing key concepts, and leading to noticeable improvements in their assignment and exam scores.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Experience 2 -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Seasonal Retail Cashier and Sales Floor Support</h3>
+                                    <p class="experience-company">Nordstrom Rack, Miami, FL</p>
+                                </div>
+                                <span class="experience-date">May 2023 - Aug 2023</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Processed 50+ daily customer transactions with accuracy and speed, resulting in reduced wait times and improved customer satisfaction.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Enhanced shopping experience by organizing merchandise and rearranging layout, contributing to an improvement in store efficiency and appearance.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Quickly became knowledgeable in all departments in the store, allowing for my assistance in peak times.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Experience 3 -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Service Ambassador</h3>
+                                    <p class="experience-company">Neiman Marcus, Miami, FL</p>
+                                </div>
+                                <span class="experience-date">Jul 2022 - Feb 2023</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Executed hundreds of weekly curbside orders by receiving packages, organizing them, and turning them into the customers.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Resolved daily customer issues while collaborating with Sales Associates to create a more efficient and welcoming environment.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Responsible for six new service ambassadors while I was training them in the register, curbside pickup, and customer service.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Experience 4 -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Daycare Assistant</h3>
+                                    <p class="experience-company">Happy Dreams Day Care, Miami, FL</p>
+                                </div>
+                                <span class="experience-date">Jun 2022 - Aug 2022</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Supervised 20 children, implementing a stimulating schedule that helped the children learn and socialize.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Prepared breakfast and lunch for the children while maintaining a safe, clean, and organized learning and play environment.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
+            
+            <!-- Leadership Tab -->
+            <div class="tab-pane fade" id="leadership" role="tabpanel">
+                <section class="experience-section">
+                    <div class="timeline">
+                        <!-- Leadership 1 -->
+                        <div class="leadership-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Co-Vice President</h3>
+                                    <p class="experience-company">Pi Mu Epsilon, Tallahassee, FL</p>
+                                </div>
+                                <span class="experience-date">Feb 2024 - Present</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Attended weekly chapter meetings to plan for upcoming events and recruitment in order to keep growing this new organization.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Promoted math on FSU campus and Tallahassee community through events like Pi Day and a speaker visit.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Leadership 2 -->
+                        <div class="leadership-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Member</h3>
+                                    <p class="experience-company">Women In Mathematics, Science, and Engineering (WIMSE), Tallahassee, FL</p>
+                                </div>
+                                <span class="experience-date">Aug 2022 - Present</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+									<li><i class="fas fa-check-circle icon-bullet"></i>Attended weekly colloquium, learning about a variety of topics that help in my preparation of a future in STEM.</li>
+                                    <li><i class="fas fa-check-circle icon-bullet"></i>Visited labs and attended panels, exposing what a lab environment entails as well as learn from other older WIMSEs.</li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Skills Tab -->
+        <div class="tab-pane fade" id="skills" role="tabpanel">
+            <section class="skills-section">
+                <div class="container">
+                    <h2 class="section-title">Skills Developed</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skill-category">
+                                <h5>Teaching & Education</h5>
+                                <div>
+                                    <span class="skill-badge">Student Support</span>
+                                    <span class="skill-badge">Curriculum Assistance</span>
+                                    <span class="skill-badge">Grading & Feedback</span>
+                                    <span class="skill-badge">Office Hours</span>
+                                    <span class="skill-badge">Concept Reinforcement</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-category">
+                                <h5>Customer Service</h5>
+                                <div>
+                                    <span class="skill-badge">Transaction Processing</span>
+                                    <span class="skill-badge">Customer Relations</span>
+                                    <span class="skill-badge">Issue Resolution</span>
+                                    <span class="skill-badge">Retail Operations</span>
+                                    <span class="skill-badge">Team Training</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-category">
+                                <h5>Childcare</h5>
+                                <div>
+                                    <span class="skill-badge">Child Supervision</span>
+                                    <span class="skill-badge">Activity Planning</span>
+                                    <span class="skill-badge">Safety Management</span>
+                                    <span class="skill-badge">Meal Preparation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-category">
+                                <h5>Organizational</h5>
+                                <div>
+                                    <span class="skill-badge">Time Management</span>
+                                    <span class="skill-badge">Multitasking</span>
+                                    <span class="skill-badge">Merchandise Organization</span>
+                                    <span class="skill-badge">Process Improvement</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-category">
+                                <h5>Leadership</h5>
+                                <div>
+                                    <span class="skill-badge">Event Planning</span>
+                                    <span class="skill-badge">Community Outreach</span>
+                                    <span class="skill-badge">Organization Growth</span>
+                                    <span class="skill-badge">STEM Advocacy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-category">
+                                <h5>Professional Development</h5>
+                                <div>
+                                    <span class="skill-badge">Colloquium Participation</span>
+                                    <span class="skill-badge">Lab Exposure</span>
+                                    <span class="skill-badge">Mentorship</span>
+                                    <span class="skill-badge">Networking</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
+</div>
 
-    <footer class="bg-dark text-white text-center py-3">
-        &copy; 2025 Sophia Mena
-    </footer>
+<footer class="text-center">
+    <div class="container">
+        <p>&copy; 2025 Sophia Mena. All rights reserved.</p>
+    </div>
+</footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Add subtle animations on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const experienceCards = document.querySelectorAll('.experience-card, .leadership-card');
+        
+        experienceCards.forEach((card, index) => {
+            // Add delay based on index for staggered animation
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+        
+        const nav = document.querySelector('.navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+                nav.style.padding = '0.7rem 0';
+            } else {
+                nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.05)';
+                nav.style.padding = '1rem 0';
+            }
+        });
+        
+        // Enable tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    });
+</script>
