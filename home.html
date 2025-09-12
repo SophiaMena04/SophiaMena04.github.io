@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sophia Mena</title>
+    <link rel="icon" type="image/png" href="SM_logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f8f9fa;
+            --accent-color: #fd79a8;
+            --text-color: #2d3436;
+            --text-light: #636e72;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-color) !important;
+            position: relative;
+            margin: 0 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            padding: 5rem 0 3rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            opacity: 0.1;
+            top: -150px;
+            right: -100px;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            opacity: 0.1;
+            bottom: -100px;
+            left: -50px;
+        }
+        
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transition: var(--transition);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .hero-title {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-subtitle {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        
+        .university-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .university-link:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+            color: var(--primary-color);
+        }
+        
+        /* Bio Section */
+        .bio-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .bio-text p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            font-weight: 300;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadein {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                text-align: center;
+                padding: 3rem 0 2rem;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sophia Mena</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research & Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Work Experience</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center animate-fadein">
+                    <img src="portrait.jpeg" alt="Sophia Mena" class="profile-img rounded-circle">
+                </div>
+                <div class="col-md-8 animate-fadein" style="animation-delay: 0.2s;">
+                    <h1 class="hero-title">Sophia Mena</h1>
+                    <p class="hero-subtitle">University Student</p>
+                    <a href="https://www.fsu.edu" target="_blank" class="university-link">
+                        <i class="fas fa-university me-2"></i>Florida State University
+                    </a>
+                    
+                    <div class="social-icons">
+                        <a href="mailto:scm22f@fsu.edu" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/sophiamena04" class="social-icon" title="GitHub" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sophia-mena" class="social-icon" title="LinkedIn" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="documents/CV_Navid_Bahadoran.pdf" class="social-icon" title="Download CV" target="_blank">
+                            <i class="fas fa-file-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bio-section">
+        <div class="container">
+            <h2 class="section-title">Biography</h2>
+            <div class="bio-text">
+                <p>
+                    TBD
+                </p>
+                <p>
+                    Hey there! I'm Sophia, a passionate university student with diverse interests spanning multiple disciplines. I'm constantly exploring new ideas and approaches to solve complex problems through interdisciplinary thinking.
+                </p>
+                <p>
+                    I'm currently pursuing my degree at Florida State University, where I'm fortunate to work with leading researchers in my field. Previously, I developed a strong foundation in both theoretical and applied approaches to problem-solving.
+                </p>
+                <p>
+                    Outside of academics, I enjoy traveling—whether it's exploring new cities or just experiencing different cultures and cuisines. I'm also passionate about sports, with tennis being my favorite, but I'll never say no to a good workout or a friendly match of any kind.
+                </p>
+                <p>
+                    When I wind down, I play the occasional game of chess, backgammon or get lost in books—especially those on philosophy. I also have a growing interest in finance and investing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 Sophia Mena. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Add subtle animations on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+                    nav.style.padding = '0.7rem 0';
+                } else {
+                    nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.05)';
+                    nav.style.padding = '1rem 0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
